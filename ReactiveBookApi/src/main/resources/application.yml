@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3307/book
+    username: root
+    password: root123
+#    for mail configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:  sbrata341@gmail.com
+    password: jctjsxhhbvkyxjsu
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    default-encoding: 'UTF-8'
+#    kafka config for notification to huge user
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
